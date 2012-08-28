@@ -1,0 +1,36 @@
+
+{% extends "Base.html"%}
+
+{% block content %} 
+ 
+ <h1>Sign In</h1>
+ <br>
+ <form action="/signin" method="post">
+ <div>
+ {{error_massage}}
+ </div>
+ <table width="200">
+  <tr>
+    <td><label><b>Username</b></label></td>
+    <td><input type="text" name="username"/></td>
+  </tr>
+  <tr>
+  	<td><br></td>
+  </tr>
+  <tr>
+    <td><label><b>Password</b></label></td>
+    <td><input type="password"  name="password"/></td>
+  </tr>
+  <tr>
+  	<td></td>
+  	<td width="200">Sign in as Manager <input type="checkbox" id="manage"/></td>
+  <tr>
+  	<td></td>
+  	<td align="right"><input type="submit"/>
+    </td>
+  </tr>
+</table>
+ </form>
+ 
+ 
+ {% endblock %} 

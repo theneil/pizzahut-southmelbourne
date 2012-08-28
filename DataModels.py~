@@ -1,0 +1,8 @@
+ from google.appengine.ext import db
+
+class User(db.Model):
+    username = db.StringProperty(required = True)
+    password = db.TextProperty(required = True)
+    position = db.TextProperty(required = True)#should be only manager, driver, kitchen_hands
+    time = db.DateTimeProperty(auto_now_add = True)
+}

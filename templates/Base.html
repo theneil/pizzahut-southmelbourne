@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Front Page</title>
+<style type="text/css">
+.content {
+
+	padding: 10px 0;
+	width: 400;
+	float: left;
+}
+.sidebar {
+	float: left;
+	width: 380;
+	background-color: #EADCAE;
+	padding-bottom: 10px;
+}
+</style></head>
+
+<body>
+<center><h1><a href="/">Pizza Hut- South Melbourne</a></h1></center>
+<div id = "heading">
+<b>
+<table>
+	<tr>
+    	<td width="100"><a href="/createroster">CreateRoster</a>
+        </td>	
+  		<td width="60"><a href="/sign-up">Sign Up</a>
+        </td>
+        <td width="60"><a href="/signin">Sign in</a></td>
+        </tr>
+</table>
+</b>
+</div>
+<div class="content">
+  {% block content %}
+  {% endblock %}
+  </div>
+  <div class="sidebar">
+  <b>Where are we</b>
+  <br />
+<img src="http://maps.googleapis.com/maps/api/staticmap?
+size=380x263&sensor=false&markers=label:S%7C-37.830667,144.959557&zoom=15"/>
+</div>
+</body>
+</html>

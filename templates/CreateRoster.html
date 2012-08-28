@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<title>Creat Roster</title>
+<script language="JavaScript"> 
+function addRow(){
+	
+	var table = document.getElementById("time_table");
+	var No = table.rows.length - 1;
+	var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount - 1);
+	var date = ["Tue","Wed","Thu","Fri","Sat","Sun","Mon"];
+	for(var i = 0; i< 8; i++)
+	{
+		var cell = row.insertCell(i);
+        var element = document.createElement("input");
+        element.type = "text";
+		element.size = "15";
+		if(i == 0)
+			element.name = "Name_" + No;
+		else
+			element.name = date[i - 1] + "_" + No;
+        cell.appendChild(element);				
+	}
+}
+</script> 
+</head> 
+  <h2>Create Roster</h2>
+  <b>Create Date: </b> {{time}}
+  <body>
+<form action = "/createroster" method="post">
+	<lable>Store name:</lable><input name="store_name" type="text"/> 
+	<br></br>
+  <table id="time_table" width="489" align="left">
+  <tr>
+  	<th scope="col" width="100">Name</th>
+    <th scope="col" width="100">Tue</th>
+    <th scope="col" width="100">Wed</th>
+    <th scope="col" width="100">Thu</th>
+    <th scope="col" width="100">Fri</th>
+    <th scope="col" width="100">Sat</th>
+    <th scope="col" width="100">Sun</th>
+    <th scope="col" width="100">Mon</th>
+  </tr>
+  <tr>
+    <th scope="row" width="100"> 
+    <input size="15" type="text" name="Name_1"/></th>
+    <td><input size="15" type="text" name="Tue_1"/></td>
+    <td><input size="15" type="text" name="Wed_1"/></td>
+    <td><input size="15" type="text" name="Thu_1"/></td>
+    <td><input size="15" type="text" name="Fri_1"/></td>
+    <td><input size="15" type="text" name="Sat_1"/></td>
+    <td><input size="15" type="text" name="Sun_1"/></td>
+    <td><input size="15" type="text" name="Mon_1"/></td>
+  </tr>
+  <tr>
+  <td>
+  <input type="button" value="Add new Person" onclick="addRow()" />
+  </td>
+  <td>
+  <input type="submit" value="Generate"/>
+  </td>
+  </tr>
+  </table>
+</form>
+ </body>
+</html>

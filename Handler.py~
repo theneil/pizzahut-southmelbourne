@@ -1,0 +1,49 @@
+import webapp2
+import cgi
+import re
+from google.appengine.ext import db
+
+
+from BaseHandler import BaseHandler
+
+class CreateRoster(BaseHandler):
+    def get(self):
+        #first check whether login
+
+        # if not re-direct to error page
+        # then re-direct to main page after 5 sec
+
+        # if yes show the create Roster Page
+        self.render("CreateRoster.html")
+
+    def post(self):
+        #first check whether login
+
+        #if check in 
+        table  = self.request.get("time_table")
+        
+
+class Signin(BaseHandler):
+    def get(self):
+        self.render("Signin.html")
+
+    def post(self):
+        username = self.request.get("username")
+        if mamanger:
+            self.setCookie("Position","Manager")
+            self.redirect("/createroster")
+           
+        elif authorized:
+            self.setCookie("Position","Other")
+            self.redirect("/")
+        else:
+            params = {"username":username}
+            params["error_message"] = "You have not regist yet!Please go to sign up page to regesit."
+            self.render("Signin.html",**params)
+
+    
+class MainPage(BaseHandler):
+    def get(self):
+        self.render("Base.html")
+
+
